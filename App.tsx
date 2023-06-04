@@ -1,62 +1,148 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, ScrollView, Text, View, Image } from "react-native";
+import * as React from "react";
+import { Image, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NativeWindStyleSheet } from "nativewind";
+import Profile from "./src/screens/Profile";
+import HomeScreen from "./src/screens/Homescreen";
+import Training from "./src/screens/Training";
+import Coach from "./src/screens/Coach";
 
 NativeWindStyleSheet.setOutput({
   default: "native",
 });
 
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          borderWidth: 1,
+          shadowOffset: { width: 0, height: 0 },
+          borderTopColor: "black",
+          borderRadius: 30,
+          position: "absolute",
+          left: 20,
+          right: 20,
+          bottom: 20,
+          height: 90,
+        },
+      }}
+    >
+      <Tab.Screen
+        name="Accueil"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarActiveTintColor: "#10B981",
+          tabBarIcon: ({ size, focused, color }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 12,
+                }}
+              >
+                <Image
+                  style={{ width: 20, height: 20 }}
+                  source={{
+                    uri: "https://img.icons8.com/?size=512&id=73&format=png",
+                  }}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Entraînement"
+        component={Training}
+        options={{
+          headerShown: false,
+          tabBarActiveTintColor: "#10B981",
+          tabBarIcon: ({ size, focused, color }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 12,
+                }}
+              >
+                <Image
+                  style={{ width: 20, height: 20 }}
+                  source={{
+                    uri: "https://img.icons8.com/?size=512&id=35090&format=png",
+                  }}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Coachs"
+        component={Coach}
+        options={{
+          headerShown: false,
+          tabBarActiveTintColor: "#10B981",
+          tabBarIcon: ({ size, focused, color }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 12,
+                }}
+              >
+                <Image
+                  style={{ width: 20, height: 20 }}
+                  source={{
+                    uri: "https://img.icons8.com/?size=512&id=1788&format=png",
+                  }}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Profil"
+        component={Profile}
+        options={{
+          headerShown: false,
+          tabBarActiveTintColor: "#10B981",
+          tabBarIcon: ({ size, focused, color }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 10,
+                }}
+              >
+                <Image
+                  style={{ width: 20, height: 20 }}
+                  source={{
+                    uri: "https://img.icons8.com/?size=512&id=106748&format=png",
+                  }}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 export default function App() {
   return (
-    <SafeAreaView className="flex-1 bg-emerald-500">
-      <View>
-        <View className="items-center justify-center">
-          <Text className="text-3xl font-bold ">WaitToFit</Text>
-          <StatusBar style="auto" />
-        </View>
-        <Text className=" pt-4 text-center text-lg">
-          L'application qui ne vous fais pas attendre avant d'atteindre vos
-          objectifs
-        </Text>
-        <Text className=" py-4 pl-6 text-left text-2xl font-semibold">
-          Nos cours
-        </Text>
-        <ScrollView
-          horizontal
-          className="rounded-lg flex flex-row mx-4 bg-white"
-        >
-          <View className="flex flex-col w-auto ">
-            <Text className=" text-start p-4">S'ENTRAINER comme KAGAMI</Text>
-            <Image
-              source={{
-                uri: "https://i3.ytimg.com/vi/RX_RPAGRUWU/hqdefault.jpg",
-              }}
-              className="rounded-lg mx-4 mb-4 "
-              style={{ width: 300, height: 200 }}
-            />
-          </View>
-          <View className="flex flex-col w-auto ">
-            <Text className=" text-start p-4">S'ENTRAINER comme KAGAMI</Text>
-            <Image
-              source={{
-                uri: "https://i3.ytimg.com/vi/RX_RPAGRUWU/hqdefault.jpg",
-              }}
-              className="rounded-lg mx-4 mb-4 "
-              style={{ width: 300, height: 200 }}
-            />
-          </View>
-          <View className="flex flex-col w-auto ">
-            <Text className=" text-start p-4">S'ENTRAINER comme KAGAMI</Text>
-            <Image
-              source={{
-                uri: "https://i3.ytimg.com/vi/RX_RPAGRUWU/hqdefault.jpg",
-              }}
-              className="rounded-lg mx-4 mb-4 "
-              style={{ width: 300, height: 200 }}
-            />
-          </View>
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
   );
 }
