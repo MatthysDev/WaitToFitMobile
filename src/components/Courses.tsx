@@ -17,18 +17,22 @@ const Courses = (props: Props) => {
         <Video
           title={"S'entrainer comme KAGAMI"}
           image={"https://i3.ytimg.com/vi/RX_RPAGRUWU/hqdefault.jpg"}
+          link={"/watch?v=RX_RPAGRUWU"}
         />
         <Video
           title={"S'entrainer comme Naruto"}
           image={"http://i3.ytimg.com/vi/wCDaCFl4qoM/hqdefault.jpg"}
+          link="/watch?v=wCDaCFl4qoM"
         />
         <Video
           title={"S'entrainer comme Kirua"}
           image={"http://i3.ytimg.com/vi/bk-jYvyBJ6c/hqdefault.jpg"}
+          link="/watch?v=bk-jYvyBJ6c"
         />
         <Video
           title={"S'entrainer comme Zoro"}
           image={"http://i3.ytimg.com/vi/Hlgn3tOCZ2Q/hqdefault.jpg"}
+          link="/watch?v=Hlgn3tOCZ2Q"
         />
       </ScrollView>
     </>

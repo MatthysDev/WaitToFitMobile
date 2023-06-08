@@ -17,18 +17,22 @@ const Cardio = (props: Props) => {
         <Video
           title={"Cardio intensif"}
           image={"http://i3.ytimg.com/vi/_p9gauFHW4k/hqdefault.jpg"}
+          link="/watch?v=_p9gauFHW4k"
         />
         <Video
           title={"Cardio intensif court"}
           image={"http://i3.ytimg.com/vi/zp1qTRgAZzw/hqdefault.jpg"}
+          link="/watch?v=zp1qTRgAZzw"
         />
         <Video
           title={"La semaine cardio"}
           image={"http://i3.ytimg.com/vi/VpyKkXXTNfI/hqdefault.jpg"}
+          link="/watch?v=VpyKkXXTNfI"
         />
         <Video
           title={"S'assouplir pour le sport'"}
           image={"http://i3.ytimg.com/vi/Zpv4-o9Hcw0/hqdefault.jpg"}
+          link="/watch?v=Zpv4-o9Hcw0"
         />
       </ScrollView>
     </>
